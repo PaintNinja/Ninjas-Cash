@@ -1,0 +1,18 @@
+{
+    "item.ninjascash.one_pence": "1p",
+    "item.ninjascash.two_pence": "2p",
+    "item.ninjascash.five_pence": "5p",
+    "item.ninjascash.ten_pence": "10p",
+    "item.ninjascash.twenty_pence": "20p",
+    "item.ninjascash.fifty_pence": "50p",
+    "item.ninjascash.one_pound": "£1",
+    "item.ninjascash.two_pounds": "£2",
+    "item.ninjascash.five_note": "£5",
+    "item.ninjascash.ten_note": "£10",
+    "item.ninjascash.twenty_note": "£20",
+    "item.ninjascash.fifty_note": "£50",
+    "item.ninjascash.hundred_note": "£100",
+    "item.ninjascash.forged_note": "£0",
+    "itemGroup.ninjascash.coins": "Ninja's Cash - Coins",
+    "itemGroup.ninjascash.notes": "Ninja's Cash - Notes"
+}

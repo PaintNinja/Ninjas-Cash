@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "ninjascash:five_note" },
+		{ "item": "ninjascash:five_note" },
+		{ "item": "ninjascash:five_note" },
+		{ "item": "ninjascash:five_note" }
+	],
+	"result": {
+		"item": "ninjascash:twenty_note"
+	}
+}
