@@ -1,15 +1,10 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         maven {
-            name = "MinecraftForge"
-            url = "https://maven.minecraftforge.net"
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
         }
-    }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "net.minecraftforge.gradle")
-                useModule("${requested.id}:ForgeGradle:${requested.version}")
-        }
+        mavenCentral()
+        gradlePluginPortal()
     }
 }
