@@ -26,9 +26,9 @@ public class NinjasCash implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		LOGGER.info("Starting Ninja's Cash...");
-	}
 
-	public static void register() {
-		// force static initialisation of Ninja's Cash registries done in CoinItems and NoteItems
+		// call empty register methods so that the classes load
+		CoinItems.register();
+		NoteItems.register();
 	}
 }
