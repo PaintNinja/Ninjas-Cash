@@ -26,21 +26,9 @@ public class NinjasCash implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		LOGGER.info("Starting Ninja's Cash...");
+	}
 
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "one_pence"), CoinItems.ONE_PENCE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "two_pence"), CoinItems.TWO_PENCE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "five_pence"), CoinItems.FIVE_PENCE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "ten_pence"), CoinItems.TEN_PENCE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "twenty_pence"), CoinItems.TWENTY_PENCE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "fifty_pence"), CoinItems.FIFTY_PENCE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "one_pound"), CoinItems.ONE_POUND);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "two_pounds"), CoinItems.TWO_POUNDS);
-
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "five_note"), NoteItems.FIVE_NOTE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "ten_note"), NoteItems.TEN_NOTE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "twenty_note"), NoteItems.TWENTY_NOTE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "fifty_note"), NoteItems.FIFTY_NOTE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "hundred_note"), NoteItems.HUNDRED_NOTE);
-		Registry.register(Registry.ITEM, new ResourceLocation(MOD_ID, "forged_note"), NoteItems.FORGED_NOTE);
+	public static void register() {
+		// force static initialisation of Ninja's Cash registries done in CoinItems and NoteItems
 	}
 }
