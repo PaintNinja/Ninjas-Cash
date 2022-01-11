@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "ninjascash",
+  "version": "${version}",
+
+  "name": "Ninja's Cash",
+  "authors": [
+    "Paint_Ninja"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/ninjas-cash",
+    "sources": "https://github.com/PaintNinja/Ninjas-Cash"
+  },
+
+  "license": "MIT",
+  "icon": "assets/ninjascash/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ga.ozli.minecraftmods.ninjascash.NinjasCash"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}
