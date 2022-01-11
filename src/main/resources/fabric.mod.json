@@ -4,7 +4,6 @@
   "version": "${version}",
 
   "name": "Ninja's Cash",
-  "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Paint_Ninja"
   ],
@@ -24,7 +23,7 @@
   },
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.12.12",
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"
