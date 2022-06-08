@@ -6,12 +6,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 
 public final class NoteItems {
 
     public static final CreativeModeTab NOTES_GROUP = new CreativeModeTab("ninjascash.notes") {
         @Override
-        public ItemStack makeIcon() {
+        public @NotNull ItemStack makeIcon() {
             return new ItemStack(TWENTY_NOTE.get());
         }
     };

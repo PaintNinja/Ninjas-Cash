@@ -4,32 +4,20 @@ plugins {
     id "net.minecraftforge.gradle" version "5.1.+"
 }
 
-version = "1.18-2.4.1"
-group = "ga.ozli.minecraftmods.ninjascash" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = "1.19.x-2.5.0"
+group = "ga.ozli.minecraftmods.ninjascash"
 archivesBaseName = "ninjascash"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty "java.version"}, JVM: ${System.getProperty "java.vm.version"} (${System.getProperty "java.vendor"}), Arch: ${System.getProperty "os.arch"}"
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: "official", version: "1.18"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
-    // accessTransformer = file("src/main/resources/META-INF/accesstransformer.cfg")
+    mappings channel: "official", version: "1.19"
 
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
-        final File runFile = project.file("run")
         client {
-            workingDirectory runFile
+            workingDirectory project.file("run")
 
-            // Recommended logging level for the console
             property "forge.logging.console.level", "debug"
 
             mods {
@@ -40,25 +28,10 @@ minecraft {
         }
 
         server {
-            workingDirectory runFile
+            workingDirectory project.file("run")
 
-            // Recommended logging level for the console
             property "forge.logging.console.level", "debug"
 
-            mods {
-                ninjascash {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        data {
-            workingDirectory runFile
-
-            // Recommended logging level for the console
-            property "forge.logging.console.level", "debug"
-
-            args "--mod", "ninjascash", "--all", "--output", file("src/generated/resources/")
             mods {
                 ninjascash {
                     source sourceSets.main
@@ -69,10 +42,9 @@ minecraft {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.18-38.0.4"
+    minecraft "net.minecraftforge:forge:1.19-41.0.1"
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
 jar {
     manifest {
         attributes([
@@ -87,8 +59,8 @@ jar {
     }
 }
 
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
 jar.finalizedBy("reobfJar") 
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn("reobfJar")
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}

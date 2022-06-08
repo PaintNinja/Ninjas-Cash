@@ -6,12 +6,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 
 public final class CoinItems {
 
     public static final CreativeModeTab COINS_GROUP = new CreativeModeTab("ninjascash.coins") {
         @Override
-        public ItemStack makeIcon() {
+        public @NotNull ItemStack makeIcon() {
             return new ItemStack(TWO_POUNDS.get());
         }
     };
