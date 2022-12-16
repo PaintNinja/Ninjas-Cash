@@ -1,31 +1,21 @@
 package ga.ozli.minecraftmods.ninjascash;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.jetbrains.annotations.NotNull;
+import net.minecraftforge.registries.RegistryObject;
 
-public final class CoinItems {
+final class CoinItems {
 
-    public static final CreativeModeTab COINS_GROUP = new CreativeModeTab("ninjascash.coins") {
-        @Override
-        public @NotNull ItemStack makeIcon() {
-            return new ItemStack(TWO_POUNDS.get());
-        }
-    };
+    static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NinjasCash.MOD_ID);
 
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NinjasCash.MOD_ID);
-
-    public static final RegistryObject<Item>
-            ONE_PENCE = ITEMS.register("one_pence", () -> new Item(new Item.Properties().tab(COINS_GROUP))),
-            TWO_PENCE = ITEMS.register("two_pence", () -> new Item(new Item.Properties().tab(COINS_GROUP))),
-            FIVE_PENCE = ITEMS.register("five_pence", () -> new Item(new Item.Properties().tab(COINS_GROUP))),
-            TEN_PENCE = ITEMS.register("ten_pence", () -> new Item(new Item.Properties().tab(COINS_GROUP))),
-            TWENTY_PENCE = ITEMS.register("twenty_pence", () -> new Item(new Item.Properties().tab(COINS_GROUP))),
-            FIFTY_PENCE = ITEMS.register("fifty_pence", () -> new Item(new Item.Properties().tab(COINS_GROUP))),
-            ONE_POUND = ITEMS.register("one_pound", () -> new Item(new Item.Properties().tab(COINS_GROUP))),
-            TWO_POUNDS = ITEMS.register("two_pounds", () -> new Item(new Item.Properties().tab(COINS_GROUP)));
+    static final RegistryObject<Item>
+            ONE_PENCE = ITEMS.register("one_pence", NinjasCash::newBasicItem),
+            TWO_PENCE = ITEMS.register("two_pence", NinjasCash::newBasicItem),
+            FIVE_PENCE = ITEMS.register("five_pence", NinjasCash::newBasicItem),
+            TEN_PENCE = ITEMS.register("ten_pence", NinjasCash::newBasicItem),
+            TWENTY_PENCE = ITEMS.register("twenty_pence", NinjasCash::newBasicItem),
+            FIFTY_PENCE = ITEMS.register("fifty_pence", NinjasCash::newBasicItem),
+            ONE_POUND = ITEMS.register("one_pound", NinjasCash::newBasicItem),
+            TWO_POUNDS = ITEMS.register("two_pounds", NinjasCash::newBasicItem);
 }
