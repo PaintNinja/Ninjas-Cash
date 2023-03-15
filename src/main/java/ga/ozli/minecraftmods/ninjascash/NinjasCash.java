@@ -33,8 +33,8 @@ public final class NinjasCash {
             event.registerCreativeModeTab(COIN_GROUP_RL, List.of(NOTE_GROUP_RL), List.of(), builder ->
                     builder.title(Component.translatable("itemGroup." + NinjasCash.MOD_ID + ".coins"))
                             .icon(() -> CoinItems.TWO_POUNDS.get().getDefaultInstance())
-                            .displayItems((enabledFlags, populator, hasPermissions) ->
-                                    populator.acceptAll(CoinItems.ITEMS.getEntries().stream()
+                            .displayItems((displayParameters, output) ->
+                                    output.acceptAll(CoinItems.ITEMS.getEntries().stream()
                                             .map(RegistryObject::get)
                                             .map(Item::getDefaultInstance)
                                             .toList()
@@ -45,8 +45,8 @@ public final class NinjasCash {
             event.registerCreativeModeTab(NOTE_GROUP_RL, List.of(), List.of(COIN_GROUP_RL), builder ->
                     builder.title(Component.translatable("itemGroup." + NinjasCash.MOD_ID + ".notes"))
                             .icon(() -> NoteItems.TWENTY_NOTE.get().getDefaultInstance())
-                            .displayItems((enabledFlags, populator, hasPermissions) ->
-                                    populator.acceptAll(NoteItems.ITEMS.getEntries().stream()
+                            .displayItems((displayParameters, output) ->
+                                    output.acceptAll(NoteItems.ITEMS.getEntries().stream()
                                             .map(RegistryObject::get)
                                             .map(Item::getDefaultInstance)
                                             .toList()
