@@ -1,8 +1,8 @@
 {
     "pack": {
-        "description": "Ninja's Cash resources",
-        "pack_format": 12,
-        "forge:resource_pack_format": 13,
-        "forge:data_pack_format": 12
+        "description": {
+            "text": "Ninja's Cash resources"
+        },
+        "pack_format": 15
     }
 }
