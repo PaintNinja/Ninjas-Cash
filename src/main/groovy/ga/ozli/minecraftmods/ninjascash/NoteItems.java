@@ -7,10 +7,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-final class NoteItems extends AbstractItems {
+public final class NoteItems extends AbstractItems {
     static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NinjasCash.MOD_ID);
 
-    private static final RegistryObject<Item>
+    public static final RegistryObject<Item>
             FIVE_NOTE = ITEMS.register("five_note", AbstractItems::newBasicItem),
             TEN_NOTE = ITEMS.register("ten_note", AbstractItems::newBasicItem),
             TWENTY_NOTE = ITEMS.register("twenty_note", AbstractItems::newBasicItem),

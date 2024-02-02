@@ -7,10 +7,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-final class CoinItems extends AbstractItems {
+public final class CoinItems extends AbstractItems {
     static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NinjasCash.MOD_ID);
 
-    private static final RegistryObject<Item>
+    public static final RegistryObject<Item>
             ONE_PENCE = ITEMS.register("one_pence", AbstractItems::newBasicItem),
             TWO_PENCE = ITEMS.register("two_pence", AbstractItems::newBasicItem),
             FIVE_PENCE = ITEMS.register("five_pence", AbstractItems::newBasicItem),

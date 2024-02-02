@@ -9,7 +9,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(NinjasCash.MOD_ID)
 public final class NinjasCash {
-    static final String MOD_ID = "ninjascash";
+    public static final String MOD_ID = "ninjascash";
     static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
     public NinjasCash() {
