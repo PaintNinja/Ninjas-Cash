@@ -35,8 +35,15 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', archivesBaseName
             args '--nogui'
         }
+
+        data {
+            workingDirectory project.file('run-data')
+            args '--mod', "ninjascash", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+        }
     }
 }
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
