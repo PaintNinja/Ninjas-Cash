@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "one_hundred_note",
+  "ingredients": [
+    {
+      "item": "ninjascash:fifty_note"
+    },
+    {
+      "item": "ninjascash:fifty_note"
+    }
+  ],
+  "result": {
+    "item": "ninjascash:hundred_note"
+  }
+}

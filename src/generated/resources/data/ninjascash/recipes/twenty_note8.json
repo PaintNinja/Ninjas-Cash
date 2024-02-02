@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "twenty_note",
+  "ingredients": [
+    {
+      "item": "ninjascash:one_pound"
+    },
+    {
+      "item": "ninjascash:one_pound"
+    },
+    {
+      "item": "ninjascash:two_pounds"
+    },
+    {
+      "item": "ninjascash:two_pounds"
+    },
+    {
+      "item": "ninjascash:two_pounds"
+    },
+    {
+      "item": "ninjascash:two_pounds"
+    },
+    {
+      "item": "ninjascash:ten_note"
+    },
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": {
+    "item": "ninjascash:twenty_note"
+  }
+}

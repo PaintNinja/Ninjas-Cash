@@ -1,0 +1,18 @@
+{
+  "values": [
+    "ninjascash:one_pence",
+    "ninjascash:two_pence",
+    "ninjascash:five_pence",
+    "ninjascash:ten_pence",
+    "ninjascash:twenty_pence",
+    "ninjascash:fifty_pence",
+    "ninjascash:one_pound",
+    "ninjascash:two_pounds",
+    "ninjascash:five_note",
+    "ninjascash:ten_note",
+    "ninjascash:twenty_note",
+    "ninjascash:fifty_note",
+    "ninjascash:hundred_note",
+    "ninjascash:forged_note"
+  ]
+}

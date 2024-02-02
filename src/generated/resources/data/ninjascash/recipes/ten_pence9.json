@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "ten_pence",
+  "ingredients": [
+    {
+      "item": "ninjascash:one_pence"
+    },
+    {
+      "item": "ninjascash:one_pence"
+    },
+    {
+      "item": "ninjascash:one_pence"
+    },
+    {
+      "item": "ninjascash:one_pence"
+    },
+    {
+      "item": "ninjascash:one_pence"
+    },
+    {
+      "item": "ninjascash:one_pence"
+    },
+    {
+      "item": "ninjascash:one_pence"
+    },
+    {
+      "item": "ninjascash:one_pence"
+    },
+    {
+      "item": "ninjascash:two_pence"
+    }
+  ],
+  "result": {
+    "item": "ninjascash:ten_pence"
+  }
+}

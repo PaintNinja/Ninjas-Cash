@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "ten_note",
+  "ingredients": [
+    {
+      "item": "ninjascash:fifty_note"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "item": "ninjascash:ten_note"
+  }
+}

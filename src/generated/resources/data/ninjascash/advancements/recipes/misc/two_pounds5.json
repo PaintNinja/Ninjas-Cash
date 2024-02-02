@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_any_money": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "ninjascash:moneys"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ninjascash:two_pounds5"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_any_money"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ninjascash:two_pounds5"
+    ]
+  },
+  "sends_telemetry_event": false
+}
