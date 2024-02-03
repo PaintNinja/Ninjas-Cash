@@ -132,7 +132,7 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
             builder.group(groupName)
                    .unlockedBy("has_coin", has(NCTags.COINS))
                    .unlockedBy("has_note", has(NCTags.NOTES))
-                   .save(recipeOutput, new ResourceLocation(NinjasCash.MOD_ID,groupName + i));
+                   .save(recipeOutput, new ResourceLocation(NinjasCash.MOD_ID, groupName + i));
 
             i++;
         }
