@@ -4,6 +4,10 @@ import ga.ozli.minecraftmods.ninjascash.CoinItems;
 import ga.ozli.minecraftmods.ninjascash.NinjasCash;
 import ga.ozli.minecraftmods.ninjascash.NoteItems;
 import ga.ozli.minecraftmods.ninjascash.util.NCTags;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -17,27 +21,26 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class NCRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    private final Map<Double, Item> denominationToItemMap = new HashMap<>(){{
-        put(0.01, CoinItems.ONE_PENCE.get());
-        put(0.02, CoinItems.TWO_PENCE.get());
-        put(0.05, CoinItems.FIVE_PENCE.get());
-        put(0.1, CoinItems.TEN_PENCE.get());
-        put(0.2, CoinItems.TWENTY_PENCE.get());
-        put(0.5, CoinItems.FIFTY_PENCE.get());
-        put(1.0, CoinItems.ONE_POUND.get());
-        put(2.0, CoinItems.TWO_POUNDS.get());
-        put(5.0, NoteItems.FIVE_NOTE.get());
-        put(10.0, NoteItems.TEN_NOTE.get());
-        put(20.0, NoteItems.TWENTY_NOTE.get());
-        put(50.0, NoteItems.FIFTY_NOTE.get());
-        put(100.0, NoteItems.HUNDRED_NOTE.get());
+    private final Int2ObjectMap<Item> denominationToItemMap = new Int2ObjectOpenHashMap<>(){{
+        put(1, CoinItems.ONE_PENCE.get());
+        put(2, CoinItems.TWO_PENCE.get());
+        put(5, CoinItems.FIVE_PENCE.get());
+        put(10, CoinItems.TEN_PENCE.get());
+        put(20, CoinItems.TWENTY_PENCE.get());
+        put(50, CoinItems.FIFTY_PENCE.get());
+        put(100, CoinItems.ONE_POUND.get());
+        put(200, CoinItems.TWO_POUNDS.get());
+        put(500, NoteItems.FIVE_NOTE.get());
+        put(1000, NoteItems.TEN_NOTE.get());
+        put(2000, NoteItems.TWENTY_NOTE.get());
+        put(5000, NoteItems.FIFTY_NOTE.get());
+        put(10000, NoteItems.HUNDRED_NOTE.get());
     }};
 
-    private final double[] denominations = {0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0, 100.0};
+    private final int[] denominations = {1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000}; // Representing denominations in cents
 
     public NCRecipeProvider(PackOutput packOutput) {
         super(packOutput);
@@ -45,20 +48,20 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
-        ArrayList<ArrayList<Double>> twoPoundsPossibleCrafts = getPossibleCraftCombinations(2.0, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> onePoundPossibleCrafts = getPossibleCraftCombinations(1.0, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> fiftyPencePossibleCrafts = getPossibleCraftCombinations(0.5, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> twentyPencePossibleCrafts = getPossibleCraftCombinations(0.2, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> tenPencePossibleCrafts = getPossibleCraftCombinations(0.1, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> fivePencePossibleCrafts = getPossibleCraftCombinations(0.05, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> twoPencePossibleCrafts = getPossibleCraftCombinations(0.02, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> onePencePossibleCrafts = getPossibleCraftCombinations(0.01, denominations, 0, new ArrayList<>());
+        List<IntList> twoPoundsPossibleCrafts = getPossibleCraftCombinations(200, denominations, 0, new IntArrayList());
+        List<IntList> onePoundPossibleCrafts = getPossibleCraftCombinations(100, denominations, 0, new IntArrayList());
+        List<IntList> fiftyPencePossibleCrafts = getPossibleCraftCombinations(50, denominations, 0, new IntArrayList());
+        List<IntList> twentyPencePossibleCrafts = getPossibleCraftCombinations(20, denominations, 0, new IntArrayList());
+        List<IntList> tenPencePossibleCrafts = getPossibleCraftCombinations(10, denominations, 0, new IntArrayList());
+        List<IntList> fivePencePossibleCrafts = getPossibleCraftCombinations(5, denominations, 0, new IntArrayList());
+        List<IntList> twoPencePossibleCrafts = getPossibleCraftCombinations(2, denominations, 0, new IntArrayList());
+        List<IntList> onePencePossibleCrafts = getPossibleCraftCombinations(1, denominations, 0, new IntArrayList());
 
-        ArrayList<ArrayList<Double>> hundredNotePossibleCrafts = getPossibleCraftCombinations(100.0, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> fiftyNotePossibleCrafts = getPossibleCraftCombinations(50.0, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> twentyNotePossibleCrafts = getPossibleCraftCombinations(20.0, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> tenNotePossibleCrafts = getPossibleCraftCombinations(10.0, denominations, 0, new ArrayList<>());
-        ArrayList<ArrayList<Double>> fiveNotePossibleCrafts = getPossibleCraftCombinations(5.0, denominations, 0, new ArrayList<>());
+        List<IntList> hundredNotePossibleCrafts = getPossibleCraftCombinations(10000, denominations, 0, new IntArrayList());
+        List<IntList> fiftyNotePossibleCrafts = getPossibleCraftCombinations(5000, denominations, 0, new IntArrayList());
+        List<IntList> twentyNotePossibleCrafts = getPossibleCraftCombinations(2000, denominations, 0, new IntArrayList());
+        List<IntList> tenNotePossibleCrafts = getPossibleCraftCombinations(1000, denominations, 0, new IntArrayList());
+        List<IntList> fiveNotePossibleCrafts = getPossibleCraftCombinations(500, denominations, 0, new IntArrayList());
 
         createMoneyRecipes(recipeOutput, twoPoundsPossibleCrafts, CoinItems.TWO_POUNDS.get(), "two_pounds", false);
         createMoneyRecipes(recipeOutput, onePoundPossibleCrafts, CoinItems.ONE_POUND.get(), "one_pound", false);
@@ -106,19 +109,19 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .save(recipeOutput, new ResourceLocation(NinjasCash.MOD_ID, recipeName));
     }
 
-    private void createMoneyRecipes(RecipeOutput recipeOutput, ArrayList<ArrayList<Double>> possibleCrafts, Item result, String groupName, boolean isNote) {
+    private void createMoneyRecipes(RecipeOutput recipeOutput, List<IntList> possibleCrafts, Item result, String groupName, boolean isNote) {
         int i = 1;
-        for (ArrayList<Double> crafts : possibleCrafts) {
+        for (IntList crafts : possibleCrafts) {
             ShapelessRecipeBuilder builder = ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result);
 
-            for (double denomination : crafts) {
+            for (int denomination : crafts) {
                 Item item = denominationToItemMap.get(denomination);
                 if (item == null) return;
 
                 builder.requires(item);
             }
 
-            boolean containsCoin = crafts.stream().anyMatch(denomination -> denomination < 5.0);
+            boolean containsCoin = crafts.intStream().anyMatch(denomination -> denomination < 500);
             if (containsCoin && isNote)
                 if (crafts.size() < 9)
                     builder.requires(Items.PAPER);
@@ -132,18 +135,18 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
         }
     }
 
-    private ArrayList<ArrayList<Double>> getPossibleCraftCombinations(double amount, double[] denominations, int index, ArrayList<Double> current) {
-        ArrayList<ArrayList<Double>> result = new ArrayList<>();
+    private List<IntList> getPossibleCraftCombinations(int amount, int[] denominations, int index, IntList current) {
+        List<IntList> result = new ArrayList<>();
 
-        if (Math.abs(amount) < 0.001 && current.size() <= 9 && !(current.size() == 1)) {
-            result.add(new ArrayList<>(current));
+        if (amount == 0 && current.size() <= 9 && !(current.size() == 1)) {
+            result.add(new IntArrayList(current));
             return result;
         }
 
         if (amount < 0 || index == denominations.length || current.size() > 9)
             return result;
 
-        double denomination = denominations[index];
+        int denomination = denominations[index];
         for (int i = 0; i <= amount / denomination; i++) {
             current.addAll(Collections.nCopies(i, denomination));
             result.addAll(getPossibleCraftCombinations(amount - i * denomination, denominations, index + 1, current));

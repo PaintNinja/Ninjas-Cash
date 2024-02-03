@@ -4,19 +4,19 @@
   "group": "two_pounds",
   "ingredients": [
     {
-      "item": "ninjascash:one_pence"
-    },
-    {
-      "item": "ninjascash:two_pence"
-    },
-    {
-      "item": "ninjascash:two_pence"
+      "item": "ninjascash:five_pence"
     },
     {
       "item": "ninjascash:five_pence"
     },
     {
-      "item": "ninjascash:twenty_pence"
+      "item": "ninjascash:five_pence"
+    },
+    {
+      "item": "ninjascash:five_pence"
+    },
+    {
+      "item": "ninjascash:ten_pence"
     },
     {
       "item": "ninjascash:twenty_pence"

@@ -7,9 +7,6 @@
       "item": "ninjascash:ten_pence"
     },
     {
-      "item": "ninjascash:ten_pence"
-    },
-    {
       "item": "ninjascash:twenty_pence"
     },
     {
@@ -22,7 +19,16 @@
       "item": "ninjascash:twenty_pence"
     },
     {
-      "item": "ninjascash:one_pound"
+      "item": "ninjascash:twenty_pence"
+    },
+    {
+      "item": "ninjascash:twenty_pence"
+    },
+    {
+      "item": "ninjascash:twenty_pence"
+    },
+    {
+      "item": "ninjascash:fifty_pence"
     }
   ],
   "result": {
