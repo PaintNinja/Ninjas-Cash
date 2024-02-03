@@ -7,12 +7,6 @@
     "ninjascash:twenty_pence",
     "ninjascash:fifty_pence",
     "ninjascash:one_pound",
-    "ninjascash:two_pounds",
-    "ninjascash:five_note",
-    "ninjascash:ten_note",
-    "ninjascash:twenty_note",
-    "ninjascash:fifty_note",
-    "ninjascash:hundred_note",
-    "ninjascash:forged_note"
+    "ninjascash:two_pounds"
   ]
 }

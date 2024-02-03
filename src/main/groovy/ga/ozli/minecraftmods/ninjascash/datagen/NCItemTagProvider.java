@@ -21,7 +21,7 @@ public class NCItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        CoinItems.ITEMS.getEntries().forEach(item -> this.tag(NCTags.MONEYS).add(item.get()));
-        NoteItems.ITEMS.getEntries().forEach(item -> this.tag(NCTags.MONEYS).add(item.get()));
+        CoinItems.ITEMS.getEntries().forEach(item -> this.tag(NCTags.COINS).add(item.get()));
+        NoteItems.ITEMS.getEntries().forEach(item -> this.tag(NCTags.NOTES).add(item.get()));
     }
 }

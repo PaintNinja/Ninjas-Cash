@@ -7,5 +7,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class NCTags {
-    public static final TagKey<Item> MONEYS = ItemTags.create(new ResourceLocation(NinjasCash.MOD_ID, "moneys"));
+    public static final TagKey<Item> COINS = ItemTags.create(new ResourceLocation(NinjasCash.MOD_ID, "coins"));
+    public static final TagKey<Item> NOTES = ItemTags.create(new ResourceLocation(NinjasCash.MOD_ID, "notes"));
 }

@@ -1,11 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_money": {
+    "has_coin": {
       "conditions": {
         "items": [
           {
-            "tag": "ninjascash:moneys"
+            "tag": "ninjascash:coins"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_note": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "ninjascash:notes"
           }
         ]
       },
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_any_money"
+      "has_coin",
+      "has_note"
     ]
   ],
   "rewards": {

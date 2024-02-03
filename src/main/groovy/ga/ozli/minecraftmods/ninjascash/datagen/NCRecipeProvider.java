@@ -97,7 +97,8 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
     private void forgedNoteRecipe(RecipeOutput recipeOutput) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, NoteItems.FORGED_NOTE.get())
                 .requires(Items.PAPER, 9)
-                .unlockedBy("has_any_money", has(NCTags.MONEYS))
+                .unlockedBy("has_coin", has(NCTags.COINS))
+                .unlockedBy("has_note", has(NCTags.NOTES))
                 .save(recipeOutput);
     }
 
@@ -105,7 +106,8 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, to, toAmount)
                 .requires(from)
                 .group(groupName)
-                .unlockedBy("has_any_money", has(NCTags.MONEYS))
+                .unlockedBy("has_coin", has(NCTags.COINS))
+                .unlockedBy("has_note", has(NCTags.NOTES))
                 .save(recipeOutput, new ResourceLocation(NinjasCash.MOD_ID, recipeName));
     }
 
@@ -128,7 +130,8 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 else continue;
 
             builder.group(groupName)
-                   .unlockedBy("has_any_money", has(NCTags.MONEYS))
+                   .unlockedBy("has_coin", has(NCTags.COINS))
+                   .unlockedBy("has_note", has(NCTags.NOTES))
                    .save(recipeOutput, new ResourceLocation(NinjasCash.MOD_ID,groupName + i));
 
             i++;
