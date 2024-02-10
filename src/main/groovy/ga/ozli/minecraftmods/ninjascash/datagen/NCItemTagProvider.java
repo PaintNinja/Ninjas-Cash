@@ -3,7 +3,6 @@ package ga.ozli.minecraftmods.ninjascash.datagen;
 import ga.ozli.minecraftmods.ninjascash.CoinItems;
 import ga.ozli.minecraftmods.ninjascash.NinjasCash;
 import ga.ozli.minecraftmods.ninjascash.NoteItems;
-import ga.ozli.minecraftmods.ninjascash.util.NCTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -21,7 +20,7 @@ public class NCItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        CoinItems.ITEMS.getEntries().forEach(item -> this.tag(NCTags.COINS).add(item.get()));
-        NoteItems.ITEMS.getEntries().forEach(item -> this.tag(NCTags.NOTES).add(item.get()));
+        CoinItems.ITEMS.getEntries().forEach(item -> this.tag(CoinItems.TAG).add(item.get()));
+        NoteItems.ITEMS.getEntries().forEach(item -> this.tag(NoteItems.TAG).add(item.get()));
     }
 }

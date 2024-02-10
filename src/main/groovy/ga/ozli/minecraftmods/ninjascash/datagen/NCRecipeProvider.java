@@ -3,7 +3,6 @@ package ga.ozli.minecraftmods.ninjascash.datagen;
 import ga.ozli.minecraftmods.ninjascash.CoinItems;
 import ga.ozli.minecraftmods.ninjascash.NinjasCash;
 import ga.ozli.minecraftmods.ninjascash.NoteItems;
-import ga.ozli.minecraftmods.ninjascash.util.NCTags;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -97,8 +96,8 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
     private void forgedNoteRecipe(RecipeOutput recipeOutput) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, NoteItems.FORGED_NOTE.get())
                 .requires(Items.PAPER, 9)
-                .unlockedBy("has_coin", has(NCTags.COINS))
-                .unlockedBy("has_note", has(NCTags.NOTES))
+                .unlockedBy("has_coin", has(CoinItems.TAG))
+                .unlockedBy("has_note", has(NoteItems.TAG))
                 .save(recipeOutput);
     }
 
@@ -106,8 +105,8 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, to, toAmount)
                 .requires(from)
                 .group(groupName)
-                .unlockedBy("has_coin", has(NCTags.COINS))
-                .unlockedBy("has_note", has(NCTags.NOTES))
+                .unlockedBy("has_coin", has(CoinItems.TAG))
+                .unlockedBy("has_note", has(NoteItems.TAG))
                 .save(recipeOutput, new ResourceLocation(NinjasCash.MOD_ID, recipeName));
     }
 
@@ -130,8 +129,8 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 else continue;
 
             builder.group(groupName)
-                   .unlockedBy("has_coin", has(NCTags.COINS))
-                   .unlockedBy("has_note", has(NCTags.NOTES))
+                   .unlockedBy("has_coin", has(CoinItems.TAG))
+                   .unlockedBy("has_note", has(NoteItems.TAG))
                    .save(recipeOutput, new ResourceLocation(NinjasCash.MOD_ID, groupName + i));
 
             i++;
