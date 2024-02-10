@@ -101,6 +101,15 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .save(recipeOutput);
     }
 
+    /**
+     * This method creates a recipe that converts one item into another in descending order of value.
+     * @param recipeOutput The output of the recipe.
+     * @param from The item to be converted.
+     * @param to The item to be obtained from the conversion.
+     * @param toAmount The amount of the item to be obtained.
+     * @param groupName The group name for the recipe.
+     * @param recipeName The name of the recipe.
+     */
     private void greatestToLowestMoneyRecipe(RecipeOutput recipeOutput, Item from, Item to, int toAmount, String groupName, String recipeName) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, to, toAmount)
                 .requires(from)
@@ -110,6 +119,14 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .save(recipeOutput, new ResourceLocation(NinjasCash.MOD_ID, recipeName));
     }
 
+    /**
+     * This method creates money recipes based on possible crafts.
+     * @param recipeOutput The output of the recipe.
+     * @param possibleCrafts A list of possible crafts.
+     * @param result The result item of the recipe.
+     * @param groupName The group name for the recipe.
+     * @param isNote A boolean indicating whether the result is a note.
+     */
     private void createMoneyRecipes(RecipeOutput recipeOutput, List<IntList> possibleCrafts, Item result, String groupName, boolean isNote) {
         int i = 1;
         for (IntList crafts : possibleCrafts) {
@@ -137,6 +154,14 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
         }
     }
 
+    /**
+     * This method returns all possible combinations of crafts that can be made for a given amount using an array of possible denominations.
+     * @param amount The total amount to be crafted.
+     * @param denominations An array of possible denominations.
+     * @param index The current index in the denominations array.
+     * @param current The current list of denominations being considered.
+     * @return A list of all possible combinations of crafts.
+     */
     private List<IntList> getPossibleCraftCombinations(int amount, int[] denominations, int index, IntList current) {
         List<IntList> result = new ArrayList<>();
 
