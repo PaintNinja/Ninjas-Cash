@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "ten_pence",
+  "ingredients": [
+    {
+      "item": "ninjascash:five_pence"
+    },
+    {
+      "item": "ninjascash:five_pence"
+    }
+  ],
+  "result": {
+    "item": "ninjascash:ten_pence"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "fifty_pence",
+  "ingredients": [
+    {
+      "item": "ninjascash:one_pound"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "ninjascash:fifty_pence"
+  }
+}

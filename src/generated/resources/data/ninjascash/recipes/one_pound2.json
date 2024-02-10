@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "one_pound",
+  "ingredients": [
+    {
+      "item": "ninjascash:twenty_pence"
+    },
+    {
+      "item": "ninjascash:twenty_pence"
+    },
+    {
+      "item": "ninjascash:twenty_pence"
+    },
+    {
+      "item": "ninjascash:twenty_pence"
+    },
+    {
+      "item": "ninjascash:twenty_pence"
+    }
+  ],
+  "result": {
+    "item": "ninjascash:one_pound"
+  }
+}

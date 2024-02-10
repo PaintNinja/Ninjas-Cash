@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "five_note",
+  "ingredients": [
+    {
+      "item": "ninjascash:fifty_pence"
+    },
+    {
+      "item": "ninjascash:fifty_pence"
+    },
+    {
+      "item": "ninjascash:two_pounds"
+    },
+    {
+      "item": "ninjascash:two_pounds"
+    },
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": {
+    "item": "ninjascash:five_note"
+  }
+}

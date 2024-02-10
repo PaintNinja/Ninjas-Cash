@@ -1,0 +1,44 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coin": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "ninjascash:coins"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_note": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "ninjascash:notes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ninjascash:five_note9"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_coin",
+      "has_note"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ninjascash:five_note9"
+    ]
+  },
+  "sends_telemetry_event": false
+}

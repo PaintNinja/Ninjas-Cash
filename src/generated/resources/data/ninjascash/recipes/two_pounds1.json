@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "two_pounds",
+  "ingredients": [
+    {
+      "item": "ninjascash:one_pound"
+    },
+    {
+      "item": "ninjascash:one_pound"
+    }
+  ],
+  "result": {
+    "item": "ninjascash:two_pounds"
+  }
+}
