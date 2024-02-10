@@ -129,19 +129,19 @@ public class NCRecipeProvider extends RecipeProvider implements IConditionBuilde
      */
     private void createMoneyRecipes(RecipeOutput recipeOutput, List<IntList> possibleCrafts, Item result, String groupName, boolean isNote) {
         int i = 1;
-        for (IntList crafts : possibleCrafts) {
+        for (IntList possibleCraft : possibleCrafts) {
             ShapelessRecipeBuilder builder = ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result);
 
-            for (int denomination : crafts) {
+            for (int denomination : possibleCraft) {
                 Item item = denominationToItemMap.get(denomination);
                 if (item == null) return;
 
                 builder.requires(item);
             }
 
-            boolean containsCoin = crafts.intStream().anyMatch(denomination -> denomination < 500);
+            boolean containsCoin = possibleCraft.intStream().anyMatch(denomination -> denomination < 500);
             if (containsCoin && isNote)
-                if (crafts.size() < 9)
+                if (possibleCraft.size() < 9)
                     builder.requires(Items.PAPER);
                 else continue;
 
